@@ -8,6 +8,7 @@
     <title>Admin's page</title>
 </head>
 <body>
+<div th:replace="header.html"></div>
 <h1>User list</h1>
 <table>
     <thead>
@@ -41,5 +42,8 @@
     </tr>
     </tbody>
 </table>
+<form th:action="@{/admin/new}">
+    <input type="submit" value="Create new user"/>
+</form>
 </body>
 </html>
