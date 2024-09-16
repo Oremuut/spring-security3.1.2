@@ -17,7 +17,6 @@ public class UserController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = (User) auth.getPrincipal();
         boolean hasRole = auth.getAuthorities().stream().anyMatch(g -> g.getAuthority().equals("ROLE_ADMIN"));
-        System.out.println(hasRole);
         model.addAttribute("user", user);
         model.addAttribute("hasRole", hasRole);
         return "user";
